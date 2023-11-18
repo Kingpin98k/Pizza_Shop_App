@@ -4,25 +4,24 @@ import MenuItem from "./MenuItem";
 
 //This is the loader function for the component
 export async function loader() {
-	//fetching the menu using the service
-	const menu = await getMenu();
+  //fetching the menu using the service
+  const menu = await getMenu();
 
-	//now we will import this in the App
-	return menu;
+  //now we will import this in the App
+  return menu;
 }
 
 function Menu() {
-	//now using the fetched data
-	//this thing can replace useEffect()
-	const menu = useLoaderData();
-	console.log(menu);
-	return (
-		<ul>
-			{menu.map((pizza) => (
-				<MenuItem pizza={pizza} key={pizza.id} />
-			))}
-		</ul>
-	);
+  //now using the fetched data
+  //this thing can replace useEffect()
+  const menu = useLoaderData();
+  return (
+    <ul className="divide-y divide-stone-200 px-2">
+      {menu.map((pizza) => (
+        <MenuItem pizza={pizza} key={pizza.id} />
+      ))}
+    </ul>
+  );
 }
 
 export default Menu;
