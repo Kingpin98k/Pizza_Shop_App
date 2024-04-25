@@ -1,20 +1,23 @@
-sudo: required
+language: node_js
+node_js:
+  - "node"
+os:
+  - linux
+dist: xenial
+sudo: true
 services:
   - docker
-
 before_install:
   - docker build -t allstar98k/pizza_shop_app:latest .
-
 deploy:
   provider: elasticbeanstalk
-  region: "ap-south-1"
-  app: "Docker_Pizza"
-  env: "DockerPizza-env"
-  # name of the bucket in S3 that travis will upload the zip file to
-  bucket_name: "elasticbeanstalk-ap-south-1-642303465584"
-  bucket_path: "Docker_Pizza"
+  region: ap-south-1
+  app: Docker_Pizza
+  env: DockerPizza-env
+  bucket_path: Docker_Pizza
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key:
     secure: $AWS_SECRET_KEY
+  bucket: elasticbeanstalk-ap-south-1-642303465584
