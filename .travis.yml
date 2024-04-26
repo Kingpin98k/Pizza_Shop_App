@@ -15,6 +15,6 @@ deploy:
   bucket_path: "Docker_Pizza"
   on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY
+  access_key_id: AKIAZLDCFDBYMTMGGUHR
   secret_access_key:
-    secure: "$AWS_SECRET_KEY"
+    secure: "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"
