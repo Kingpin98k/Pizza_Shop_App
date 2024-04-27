@@ -2,14 +2,14 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - docker build -t allstar98k/pizza_shop_app:latest .
-
-before_deploy:
+before_script:
   # Print AWS access keys
   - |
     echo "AWS Access Key: $AWS_ACCESS_KEY"
     echo "AWS Secret Key: $AWS_SECRET_KEY"
+
+before_install:
+  - docker build -t allstar98k/pizza_shop_app:latest .
 
 deploy:
   provider: elasticbeanstalk
