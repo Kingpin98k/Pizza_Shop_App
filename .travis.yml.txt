@@ -2,12 +2,6 @@ sudo: required
 services:
   - docker
 
-before_script:
-  # Print AWS access keys
-  - |
-    echo "AWS Access Key: $AWS_ACCESS_KEY"
-    echo "AWS Secret Key: $AWS_SECRET_KEY"
-
 before_install:
   - docker build -t allstar98k/pizza_shop_app:latest .
 
