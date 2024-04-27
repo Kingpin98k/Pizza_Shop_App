@@ -8,13 +8,12 @@ before_install:
 deploy:
   provider: elasticbeanstalk
   region: "ap-south-1"
-  app: "Docker_Pizza"
-  env: "DockerPizza-env"
+  app: "DockerPizzaV1"
+  env: "DockerPizzaV1-env"
   # name of the bucket in S3 that travis will upload the zip file to
   bucket_name: "elasticbeanstalk-ap-south-1-642303465584"
-  bucket_path: "Docker_Pizza"
+  bucket_path: "DockerPizzaV1"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: "$AWS_SECRET_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
