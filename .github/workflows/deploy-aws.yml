@@ -18,8 +18,8 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
-          application_name: DockerPizzaV1
-          environment_name: DockerPizzaV1-env
+          application_name: DockerPizza
+          environment_name: DockerPizza-env
           version_label: ${{github.sha}}
           existing_bucket_name: elasticbeanstalk-ap-south-1-642303465584
           region: ap-south-1
